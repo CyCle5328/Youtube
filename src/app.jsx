@@ -12,13 +12,13 @@ function App() {
     };
 
     fetch(
-      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAdILQzC4mJopF4WB0xzOlb1iKXq4gyy48",
+      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAVzguTqQOBQQ20aqoav9OK1MgrDrSj0QY",
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setVideos(result.items))
       .catch((error) => console.log("error", error));
-  });
+  }, []);
 
   return (
     <>
