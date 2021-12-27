@@ -1,10 +1,10 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 import style from "./video_detail.module.css";
 
 const VideoDetail = ({ video, video: { snippet } }) => (
   <section className={style.detail}>
     <iframe
+      title="youtube video player"
       className={style.video}
       type="text/html"
       width="100%"
