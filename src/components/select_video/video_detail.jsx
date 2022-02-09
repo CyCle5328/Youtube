@@ -12,7 +12,7 @@ const VideoDetail = ({ video, video: { snippet } }) => (
       src={`https://www.youtube.com/embed/${video.id}`}
       frameBorder="0"
       allowFullScreen
-    ></iframe>
+    />
     <h2>{snippet.title}</h2>
     <h3>{snippet.chnnelTitle}</h3>
     <pre className={style.description}>{snippet.description}</pre>
