@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
-import styles from "./app.module.css";
-import VideoList from "./components/video_list/video_list";
-import SearchHeader from "./components/search_header/search_header";
-import VideoDetail from "./components/select_video/video_detail";
+import React, { useCallback, useEffect, useState } from 'react';
+import styles from './app.module.css';
+import VideoList from './components/video_list/video_list';
+import SearchHeader from './components/search_header/search_header';
+import VideoDetail from './components/select_video/video_detail';
 
 const App = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
@@ -13,19 +13,17 @@ const App = ({ youtube }) => {
   };
 
   const search = useCallback(
-    (query) => {
+    async (query) => {
       setSelectedVideo(null);
-      youtube
-        .search(query) //
-        .then((videos) => setVideos(videos));
+      const videos = await youtube.search(query);
+      setVideos(videos);
     },
-    [youtube]
+    [youtube],
   );
 
-  useEffect(() => {
-    youtube
-      .mostPopular() //
-      .then((videos) => setVideos(videos));
+  useEffect(async () => {
+    const videos = await youtube.mostPopular();
+    setVideos(videos);
   }, [youtube]);
 
   return (
@@ -41,7 +39,7 @@ const App = ({ youtube }) => {
           <VideoList
             videos={videos}
             onVideoClick={selectVideo}
-            display={selectedVideo ? "list" : "grid"}
+            display={selectedVideo ? 'list' : 'grid'}
           />
         </div>
       </section>
