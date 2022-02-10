@@ -33,3 +33,6 @@
 ---
 
 ## 배포
+<img width="644" alt="Screen Shot 2022-02-11 at 3 15 28 AM" src="https://user-images.githubusercontent.com/94304848/153470879-02125f3f-6cf9-4653-a95e-7464583538e2.png">
+
+> AWS 배포 : 54.180.26.215:8000
